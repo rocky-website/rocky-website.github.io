@@ -1542,3 +1542,4 @@ html[data-mode="night"] .sl-fig .when-day{display:none}html[data-mode="night"] .
 .award .ai path,.award .ai circle{stroke-dasharray:160;stroke-dashoffset:160;transition:stroke-dashoffset 1.6s var(--ease) .25s}
 .award.in .ai path,.award.in .ai circle,.reveal-all .award .ai path,.reveal-all .award .ai circle{stroke-dashoffset:0}
 @media (prefers-reduced-motion:reduce){.award .ai path,.award .ai circle{stroke-dashoffset:0;transition:none}}
+.me::before{display:none!important}
