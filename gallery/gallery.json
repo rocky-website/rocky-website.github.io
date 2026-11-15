@@ -291,6 +291,15 @@
       "cover": 0,
       "photos": [
         {
+          "src": "gallery/photos/hpc4climate-2025/03.jpg",
+          "thumb": "gallery/thumbs/hpc4climate-2025/03.jpg",
+          "w": 2000,
+          "h": 1126,
+          "tw": 700,
+          "th": 394,
+          "caption": "Group photo by the Elbe on the last day of the school"
+        },
+        {
           "src": "gallery/photos/hpc4climate-2025/01.jpg",
           "thumb": "gallery/thumbs/hpc4climate-2025/01.jpg",
           "w": 2000,
@@ -298,6 +307,42 @@
           "tw": 700,
           "th": 500,
           "caption": "Getting set up by the river at Lauenburg the evening before the school began"
+        },
+        {
+          "src": "gallery/photos/hpc4climate-2025/04.jpg",
+          "thumb": "gallery/thumbs/hpc4climate-2025/04.jpg",
+          "w": 2000,
+          "h": 1332,
+          "tw": 700,
+          "th": 466,
+          "caption": "In a lecture session, working through the exercises"
+        },
+        {
+          "src": "gallery/photos/hpc4climate-2025/05.jpg",
+          "thumb": "gallery/thumbs/hpc4climate-2025/05.jpg",
+          "w": 2000,
+          "h": 1333,
+          "tw": 700,
+          "th": 467,
+          "caption": "Working on the group assignment with my teammates"
+        },
+        {
+          "src": "gallery/photos/hpc4climate-2025/06.jpg",
+          "thumb": "gallery/thumbs/hpc4climate-2025/06.jpg",
+          "w": 2000,
+          "h": 1333,
+          "tw": 700,
+          "th": 467,
+          "caption": "Presenting our group assignment"
+        },
+        {
+          "src": "gallery/photos/hpc4climate-2025/07.jpg",
+          "thumb": "gallery/thumbs/hpc4climate-2025/07.jpg",
+          "w": 2000,
+          "h": 1126,
+          "tw": 700,
+          "th": 394,
+          "caption": "All participants together on the last day"
         },
         {
           "src": "gallery/photos/hpc4climate-2025/02.jpg",
