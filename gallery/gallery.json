@@ -30,6 +30,71 @@
       "short": "Annual progress, Nov 2026"
     },
     {
+      "id": "dg-imd-visit-2026",
+      "title": "Visit of the Director General of IMD to CoEDMM",
+      "date": "2026-10-22",
+      "place": "CoEDMM, IIT Roorkee",
+      "category": "campus",
+      "cover": 0,
+      "photos": [
+        {
+          "src": "gallery/photos/dg-imd-visit-2026/01.jpg",
+          "thumb": "gallery/thumbs/dg-imd-visit-2026/01.jpg",
+          "w": 2000,
+          "h": 1331,
+          "tw": 700,
+          "th": 466,
+          "caption": "Discussing my PhD research with the Director General of IMD"
+        },
+        {
+          "src": "gallery/photos/dg-imd-visit-2026/02.jpg",
+          "thumb": "gallery/thumbs/dg-imd-visit-2026/02.jpg",
+          "w": 2000,
+          "h": 1331,
+          "tw": 700,
+          "th": 466,
+          "caption": "Talking through my research work with the DG IMD"
+        },
+        {
+          "src": "gallery/photos/dg-imd-visit-2026/03.jpg",
+          "thumb": "gallery/thumbs/dg-imd-visit-2026/03.jpg",
+          "w": 2000,
+          "h": 1331,
+          "tw": 700,
+          "th": 466,
+          "caption": "Showing MausamDrishti, the weather forecasting platform developed at CoEDMM, to the DG IMD and the Head of CoEDMM"
+        },
+        {
+          "src": "gallery/photos/dg-imd-visit-2026/04.jpg",
+          "thumb": "gallery/thumbs/dg-imd-visit-2026/04.jpg",
+          "w": 2000,
+          "h": 1331,
+          "tw": 700,
+          "th": 466,
+          "caption": "With the DG IMD, the Head of CoEDMM and the group in the lab"
+        },
+        {
+          "src": "gallery/photos/dg-imd-visit-2026/05.jpg",
+          "thumb": "gallery/thumbs/dg-imd-visit-2026/05.jpg",
+          "w": 2000,
+          "h": 1331,
+          "tw": 700,
+          "th": 466,
+          "caption": "Group photo in front of the CoEDMM building"
+        },
+        {
+          "src": "gallery/photos/dg-imd-visit-2026/06.jpg",
+          "thumb": "gallery/thumbs/dg-imd-visit-2026/06.jpg",
+          "w": 2000,
+          "h": 1331,
+          "tw": 700,
+          "th": 466,
+          "caption": "With my colleagues from the Weather and Climate Research Group"
+        }
+      ],
+      "short": "DG IMD visit, Oct 2026"
+    },
+    {
       "id": "iddrr-rsd-2026",
       "title": "International Day for Disaster Risk Reduction and Research Scholar's Day 2026",
       "date": "2026-10-13",
