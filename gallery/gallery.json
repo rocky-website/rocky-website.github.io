@@ -645,6 +645,71 @@
       "short": "ICTS, May 2024"
     },
     {
+      "id": "idrim-2023",
+      "title": "IDRiM 2023 Conference, IIT Roorkee",
+      "date": "2023-09-28",
+      "place": "IIT Roorkee",
+      "category": "conference",
+      "cover": 0,
+      "photos": [
+        {
+          "src": "gallery/photos/idrim-2023/01.jpg",
+          "thumb": "gallery/thumbs/idrim-2023/01.jpg",
+          "w": 1189,
+          "h": 1060,
+          "tw": 700,
+          "th": 624,
+          "caption": "At the podium during IDRiM 2023, hosted by CoEDMM, where I led the technical team"
+        },
+        {
+          "src": "gallery/photos/idrim-2023/02.jpg",
+          "thumb": "gallery/thumbs/idrim-2023/02.jpg",
+          "w": 1189,
+          "h": 1060,
+          "tw": 700,
+          "th": 624,
+          "caption": "Speaking during a session at IDRiM 2023"
+        },
+        {
+          "src": "gallery/photos/idrim-2023/03.jpg",
+          "thumb": "gallery/thumbs/idrim-2023/03.jpg",
+          "w": 998,
+          "h": 1186,
+          "tw": 589,
+          "th": 700,
+          "caption": "Handling the technical side of a session"
+        },
+        {
+          "src": "gallery/photos/idrim-2023/04.jpg",
+          "thumb": "gallery/thumbs/idrim-2023/04.jpg",
+          "w": 1189,
+          "h": 928,
+          "tw": 700,
+          "th": 546,
+          "caption": "With fellow participants at the venue"
+        },
+        {
+          "src": "gallery/photos/idrim-2023/05.jpg",
+          "thumb": "gallery/thumbs/idrim-2023/05.jpg",
+          "w": 998,
+          "h": 1054,
+          "tw": 663,
+          "th": 700,
+          "caption": "With a friend at the conference"
+        },
+        {
+          "src": "gallery/photos/idrim-2023/06.jpg",
+          "thumb": "gallery/thumbs/idrim-2023/06.jpg",
+          "w": 1189,
+          "h": 1186,
+          "tw": 700,
+          "th": 698,
+          "caption": "Group photo of the IDRiM 2023 participants, 28 to 30 September 2023"
+        }
+      ],
+      "short": "IDRiM 2023, Roorkee"
+    },
+    {
       "id": "iith-convocation-2022",
       "title": "Eleventh Convocation, IIT Hyderabad",
       "date": "2022-08",
