@@ -1,6 +1,107 @@
 {
   "albums": [
     {
+      "id": "tropmet-2026",
+      "title": "TROPMET 2026, National Conference on PRAGaTI",
+      "date": "2026-11-19",
+      "place": "NCMRWF, Noida",
+      "category": "conference",
+      "cover": 0,
+      "photos": [
+        {
+          "src": "gallery/photos/tropmet-2026/01.jpg",
+          "thumb": "gallery/thumbs/tropmet-2026/01.jpg",
+          "w": 2000,
+          "h": 1126,
+          "tw": 700,
+          "th": 394,
+          "caption": "Giving my lightning talk on surface-layer parameterizations over mountainous terrain"
+        },
+        {
+          "src": "gallery/photos/tropmet-2026/02.jpg",
+          "thumb": "gallery/thumbs/tropmet-2026/02.jpg",
+          "w": 1126,
+          "h": 2000,
+          "tw": 394,
+          "th": 700,
+          "caption": "With my poster at TROPMET 2026"
+        },
+        {
+          "src": "gallery/photos/tropmet-2026/03.jpg",
+          "thumb": "gallery/thumbs/tropmet-2026/03.jpg",
+          "w": 1126,
+          "h": 2000,
+          "tw": 394,
+          "th": 700,
+          "caption": "With the TROPMET 2026 banner at NCMRWF"
+        },
+        {
+          "src": "gallery/photos/tropmet-2026/04.jpg",
+          "thumb": "gallery/thumbs/tropmet-2026/04.jpg",
+          "w": 1126,
+          "h": 2000,
+          "tw": 394,
+          "th": 700,
+          "caption": "With Dr. Ashis K. Mitra"
+        },
+        {
+          "src": "gallery/photos/tropmet-2026/05.jpg",
+          "thumb": "gallery/thumbs/tropmet-2026/05.jpg",
+          "w": 2000,
+          "h": 1126,
+          "tw": 700,
+          "th": 394,
+          "caption": "With colleagues beside the conference banner"
+        },
+        {
+          "src": "gallery/photos/tropmet-2026/06.jpg",
+          "thumb": "gallery/thumbs/tropmet-2026/06.jpg",
+          "w": 1126,
+          "h": 2000,
+          "tw": 394,
+          "th": 700,
+          "caption": "In front of the NCMRWF building"
+        },
+        {
+          "src": "gallery/photos/tropmet-2026/07.jpg",
+          "thumb": "gallery/thumbs/tropmet-2026/07.jpg",
+          "w": 2000,
+          "h": 1500,
+          "tw": 700,
+          "th": 525,
+          "caption": "Colleagues at the NCMRWF campus"
+        },
+        {
+          "src": "gallery/photos/tropmet-2026/08.jpg",
+          "thumb": "gallery/thumbs/tropmet-2026/08.jpg",
+          "w": 2000,
+          "h": 1126,
+          "tw": 700,
+          "th": 394,
+          "caption": "At the conference entrance gate"
+        },
+        {
+          "src": "gallery/photos/tropmet-2026/09.jpg",
+          "thumb": "gallery/thumbs/tropmet-2026/09.jpg",
+          "w": 1280,
+          "h": 960,
+          "tw": 700,
+          "th": 525,
+          "caption": "Lunch break with friends"
+        },
+        {
+          "src": "gallery/photos/tropmet-2026/10.jpg",
+          "thumb": "gallery/thumbs/tropmet-2026/10.jpg",
+          "w": 1280,
+          "h": 960,
+          "tw": 700,
+          "th": 525,
+          "caption": "With colleagues at the poster session"
+        }
+      ],
+      "short": "TROPMET 2026, Noida"
+    },
+    {
       "id": "apr-2026",
       "title": "Annual progress presentation",
       "date": "2026-11-04",
