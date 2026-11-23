@@ -88,8 +88,8 @@
     sec.classList.add('loading');
     var f = getJSON('https://api.open-meteo.com/v1/forecast?' + q +
       '&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,cloud_cover,pressure_msl,wind_speed_10m,wind_direction_10m,wind_gusts_10m,is_day' +
-      '&hourly=temperature_2m,precipitation,precipitation_probability,pressure_msl,wind_speed_10m,wind_direction_10m,wind_gusts_10m,weather_code' +
-      '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant,sunrise,sunset' +
+      '&hourly=temperature_2m,relative_humidity_2m,precipitation,precipitation_probability,pressure_msl,wind_speed_10m,wind_direction_10m,wind_gusts_10m,weather_code' +
+      '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant,relative_humidity_2m_min,relative_humidity_2m_max,sunrise,sunset' +
       '&forecast_days=8&timezone=auto&wind_speed_unit=ms');
     var a = getJSON('https://air-quality-api.open-meteo.com/v1/air-quality?' + q +
       '&current=us_aqi,pm10,pm2_5,carbon_monoxide,nitrogen_dioxide,sulphur_dioxide,ozone&hourly=us_aqi&forecast_days=5&timezone=auto').catch(function () { return null; });
@@ -163,7 +163,7 @@
       '<div><dt>Wind at 10 m</dt><dd>' + arrow(c.wind_direction_10m) + num(c.wind_speed_10m, 1) + '<small>m/s ' + compass(c.wind_direction_10m) + ', ' + num(c.wind_direction_10m, 0) + '°</small></dd></div>' +
       '<div><dt>Gusts</dt><dd>' + num(c.wind_gusts_10m, 1) + '<small>m/s</small></dd></div>' +
       '<div><dt>Rain, next 24 hours</dt><dd>' + num(n.rain, 1) + '<small>mm</small><em>' + num(n.pop, 0) + '% chance</em></dd></div>' +
-      '<div><dt>Humidity</dt><dd>' + num(c.relative_humidity_2m, 0) + '<small>%</small></dd></div>' +
+      '<div><dt>Relative humidity, 2 m</dt><dd>' + num(c.relative_humidity_2m, 0) + '<small>%</small></dd></div>' +
       '<div><dt>Cloud cover</dt><dd>' + num(c.cloud_cover, 0) + '<small>%</small></dd></div>' +
       '</dl>' +
       '<p class="fc-sun">Sunrise ' + hm(D.daily.sunrise[0]) + ', sunset ' + hm(D.daily.sunset[0]) + '</p>';
@@ -197,6 +197,7 @@
       '<div class="fb-s"><p class="fb-l">' + esc(w[0]) + (w[0] ? '. ' : '') + 'Today ' + num(D.daily.temperature_2m_min[0], 0) + ' to ' + num(D.daily.temperature_2m_max[0], 0) + ' °C, ' + rainWords(D.daily.precipitation_sum[0] || 0) + '.</p>' +
       '<p class="fb-chips"><span>' + arrow(c.wind_direction_10m) + num(c.wind_speed_10m, 1) + ' m/s ' + compass(c.wind_direction_10m) + '</span>' +
       '<span>' + num(c.pressure_msl, 0) + ' hPa</span>' +
+      '<span>RH ' + num(c.relative_humidity_2m, 0) + '%</span>' +
       '<span>Rain, 24 h: ' + num(n.rain, 1) + ' mm</span>' +
       (AQ ? '<span class="aq" data-c="' + aqiCat(AQ.current.us_aqi)[2] + '"><i></i>AQI ' + num(AQ.current.us_aqi, 0) + '</span>' : '') +
       (top ? '<span class="adv" data-l="' + top.l + '">' + TRI + LV[top.l] + ': ' + esc(top.h.toLowerCase()) + '</span>' : '') + '</p></div>';
@@ -215,6 +216,7 @@
         '<p class="t" title="Minimum and maximum temperature"><span>' + num(mn, 0) + '°</span><i><em style="left:' + ((mn - lo) / sp * 100).toFixed(1) + '%;right:' + ((hi - mx) / sp * 100).toFixed(1) + '%"></em></i><span>' + num(mx, 0) + '°</span></p>' +
         '<p class="r">' + (r < 0.1 ? 'Dry' : num(r, 1) + ' mm') + '</p>' +
         '<p class="wd">' + arrow(d.wind_direction_10m_dominant[i]) + num(d.wind_speed_10m_max[i], 1) + ' m/s ' + compass(d.wind_direction_10m_dominant[i]) + '</p>' +
+        (d.relative_humidity_2m_min ? '<p class="rh" title="Relative humidity at 2 m, lowest to highest">RH ' + num(d.relative_humidity_2m_min[i], 0) + ' to ' + num(d.relative_humidity_2m_max[i], 0) + '%</p>' : '') +
         '</li>';
     }).join('');
   }
@@ -225,6 +227,7 @@
     r: 'Rain in each hour, in mm',
     w: 'Wind at 10 m, in m/s. Arrows show where the wind is blowing to.',
     p: 'Pressure at mean sea level, in hPa',
+    h: 'Relative humidity at 2 m, in %',
     a: 'US air quality index. The strip on the left marks the classes, from good at the bottom. The air quality forecast runs about four days ahead.'
   };
   function ticks(lo, hi, n) {
@@ -253,6 +256,7 @@
       lo -= .6; hi += .9;
     } else if (VAR === 'r') { A = sl('precipitation'); lo = 0; hi = Math.max(1, max(A)); }
     else if (VAR === 'w') { A = sl('wind_speed_10m'); B = sl('wind_gusts_10m'); lo = 0; hi = Math.max(2, max(A.concat(B))); }
+    else if (VAR === 'h') { A = sl('relative_humidity_2m'); lo = 0; hi = 100; }
     else if (VAR === 'a') {
       var map = {}; if (AQ && AQ.hourly) AQ.hourly.time.forEach(function (t, i) { map[t] = AQ.hourly.us_aqi[i]; });
       A = T.map(function (t) { return map[t] == null ? null : map[t]; });
@@ -309,7 +313,7 @@
       var x = X(i), y = Y(v), tx = Math.max(m.l + 16, Math.min(W - m.r - 16, x));
       return '<circle class="pt" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="4"/><text class="vl" x="' + tx.toFixed(1) + '" y="' + (y + (above ? -10 : 18)).toFixed(1) + '" text-anchor="middle">' + txt + '</text>';
     }
-    if (VAR === 't' || VAR === 'p' || VAR === 'a') {
+    if (VAR === 't' || VAR === 'p' || VAR === 'h' || VAR === 'a') {
       var imx = A.indexOf(max(vals)), imn = A.indexOf(min(vals)), dp = VAR === 't' ? 1 : 0;
       s += mark(imx, A[imx], num(A[imx], dp), true); if (imn !== imx && VAR !== 'a') s += mark(imn, A[imn], num(A[imn], dp), false);
     } else if (VAR === 'w' && B && B.length) {
@@ -351,6 +355,7 @@
       else if (VAR === 'r') body = row('k4', 'mm', num(A[i], 1)) + (pop.length ? row('', 'chance of rain', num(pop[i], 0) + '%') : '');
       else if (VAR === 'w') body = row('k1', 'm/s wind', num(A[i], 1)) + row('k3', 'm/s gusts', num(B[i], 1)) + row('', 'from ' + compass(dirs[i]), num(dirs[i], 0) + '°');
       else if (VAR === 'a') body = A[i] == null ? row('', 'no forecast this far ahead', '--') : row('k1', 'US AQI', num(A[i], 0)) + row('', esc(aqiCat(A[i])[1].toLowerCase()), '');
+      else if (VAR === 'h') body = row('k1', '% relative humidity', num(A[i], 0));
       else body = row('k1', 'hPa', num(A[i], 1));
       tip.innerHTML = hd + body; tip.hidden = false;
       var tw = tip.offsetWidth, left = x + 14; if (left + tw > W - 4) left = x - tw - 14;
@@ -388,9 +393,9 @@
     var h = D.hourly, win = span(RANGE), rows = '', step = RANGE > 60 ? 6 : 3;
     for (var i = win.i0; i < win.i0 + win.n; i += step) {
       var t = h.time[i];
-      rows += '<tr><th scope="row">' + DAY3[dow(t)] + ' ' + t.slice(11, 16) + '</th><td>' + num(h.temperature_2m[i], 1) + '</td><td>' + num(h.precipitation[i], 1) + '</td><td>' + (h.precipitation_probability ? num(h.precipitation_probability[i], 0) : '--') + '</td><td>' + num(h.wind_speed_10m[i], 1) + '</td><td>' + num(h.wind_gusts_10m[i], 1) + '</td><td>' + compass(h.wind_direction_10m[i]) + ' ' + num(h.wind_direction_10m[i], 0) + '°</td><td>' + num(h.pressure_msl[i], 0) + '</td></tr>';
+      rows += '<tr><th scope="row">' + DAY3[dow(t)] + ' ' + t.slice(11, 16) + '</th><td>' + num(h.temperature_2m[i], 1) + '</td><td>' + num(h.precipitation[i], 1) + '</td><td>' + (h.precipitation_probability ? num(h.precipitation_probability[i], 0) : '--') + '</td><td>' + num(h.wind_speed_10m[i], 1) + '</td><td>' + num(h.wind_gusts_10m[i], 1) + '</td><td>' + compass(h.wind_direction_10m[i]) + ' ' + num(h.wind_direction_10m[i], 0) + '°</td><td>' + num(h.pressure_msl[i], 0) + '</td><td>' + (h.relative_humidity_2m ? num(h.relative_humidity_2m[i], 0) : '--') + '</td></tr>';
     }
-    tableEl.innerHTML = '<table><thead><tr><th scope="col">Local time</th><th scope="col">Temp, °C</th><th scope="col">Rain, mm</th><th scope="col">Chance, %</th><th scope="col">Wind, m/s</th><th scope="col">Gust, m/s</th><th scope="col">From</th><th scope="col">Pressure, hPa</th></tr></thead><tbody>' + rows + '</tbody></table>';
+    tableEl.innerHTML = '<table><thead><tr><th scope="col">Local time</th><th scope="col">Temp, °C</th><th scope="col">Rain, mm</th><th scope="col">Chance, %</th><th scope="col">Wind, m/s</th><th scope="col">Gust, m/s</th><th scope="col">From</th><th scope="col">Pressure, hPa</th><th scope="col">RH, %</th></tr></thead><tbody>' + rows + '</tbody></table>';
   }
 
   /* ---------- air quality ---------- */

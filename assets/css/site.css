@@ -1119,7 +1119,7 @@ html[data-mode="night"]{--c1:#1D5A8C;--c2:#8E5E0C;--c4:#3D7FB8}
 .fc-days .t span:last-child{font-weight:600}
 .fc-days .t i{position:relative;height:5px;border-radius:99px;background:var(--bg-2)}
 .fc-days .t em{position:absolute;top:0;bottom:0;border-radius:99px;background:linear-gradient(90deg,var(--c4),var(--c2));min-width:5px}
-.fc-days .r,.fc-days .wd{margin-top:6px;font-size:.78rem;color:var(--ink-2);white-space:nowrap}
+.fc-days .r,.fc-days .wd,.fc-days .rh{margin-top:6px;font-size:.78rem;color:var(--ink-2);white-space:nowrap}
 .fc-days .r{color:var(--c4);font-weight:500}
 
 /* air quality */
@@ -1543,3 +1543,7 @@ html[data-mode="night"] .sl-fig .when-day{display:none}html[data-mode="night"] .
 .award.in .ai path,.award.in .ai circle,.reveal-all .award .ai path,.reveal-all .award .ai circle{stroke-dashoffset:0}
 @media (prefers-reduced-motion:reduce){.award .ai path,.award .ai circle{stroke-dashoffset:0;transition:none}}
 .me::before{display:none!important}
+
+/* relative humidity on the day cards; on narrow screens it is in the chart and table instead */
+.fc-days .rh{color:var(--ink-3)}
+@media (max-width:980px){.fc-days .rh{display:none}}
