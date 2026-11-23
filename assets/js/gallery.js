@@ -16,6 +16,14 @@
     var p = d.split('-'), m = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     return (p[2] ? +p[2] + ' ' : '') + (p[1] ? m[+p[1] - 1] + ' ' : '') + p[0];
   }
+  /* "19 to 21 November 2026", "28 July to 7 August 2025" when an album has an end date */
+  function span(a) {
+    if (!a.end) return when(a.date);
+    var x = a.date.split('-'), y = a.end.split('-');
+    if (x[0] === y[0] && x[1] === y[1]) return +x[2] + ' to ' + when(a.end);
+    if (x[0] === y[0]) return when(a.date).replace(' ' + x[0], '') + ' to ' + when(a.end);
+    return when(a.date) + ' to ' + when(a.end);
+  }
 
   var SHOW = window.innerWidth < 600 ? 4 : 6, reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var openAlbums = {};
@@ -28,7 +36,7 @@
     var list = albums.filter(function (a) { return filter === 'all' || a.category === filter; });
     grid.innerHTML = list.map(function (a) {
       var more = a.photos.length - SHOW, opened = openAlbums[a.id];
-      return '<section class="album' + (opened ? ' open' : '') + '" id="' + esc(a.id) + '"><header class="album-h"><h2>' + esc(a.title) + '</h2><p>' + esc([a.place, when(a.date)].filter(Boolean).join(', ')) +
+      return '<section class="album' + (opened ? ' open' : '') + '" id="' + esc(a.id) + '"><header class="album-h"><h2>' + esc(a.title) + '</h2><p>' + esc([a.place, span(a)].filter(Boolean).join(', ')) +
         ' <span>' + a.photos.length + (a.photos.length > 1 ? ' photos' : ' photo') + '</span></p></header><div class="gal">' +
         a.photos.map(function (c, i) { return (i < SHOW || opened) ? fig(a, c, i, i >= SHOW) : ''; }).join('') + '</div>' +
         (more > 0 && !opened ? '<button type="button" class="more" data-more="' + esc(a.id) + '">Show ' + more + ' more ' + (more > 1 ? 'photos' : 'photo') + '</button>' : '') +
@@ -62,7 +70,7 @@
       img.src = p.src; img.alt = p.caption || cur.title;
       num.textContent = (idx + 1) + ' of ' + cur.photos.length;
       alb.textContent = cur.title;
-      cap.innerHTML = esc(p.caption || cur.title) + '<small>' + esc([cur.place, when(p.date || cur.date)].filter(Boolean).join(', ')) + '</small>';
+      cap.innerHTML = esc(p.caption || cur.title) + '<small>' + esc([cur.place, p.date ? when(p.date) : span(cur)].filter(Boolean).join(', ')) + '</small>';
     };
     if (dir && !reduce && img.animate) {
       img.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateX(' + (-dir * 28) + 'px)' }], { duration: 160, easing: 'ease-in' }).onfinish = function () {

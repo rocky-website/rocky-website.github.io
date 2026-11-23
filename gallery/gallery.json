@@ -99,7 +99,8 @@
           "caption": "With colleagues at the poster session"
         }
       ],
-      "short": "TROPMET 2026, Noida"
+      "short": "TROPMET 2026, Noida",
+      "end": "2026-11-21"
     },
     {
       "id": "apr-2026",
@@ -399,7 +400,8 @@
           "caption": "With Prof. Someshwar Das, formerly Scientist-G and Adviser at NCMRWF"
         }
       ],
-      "short": "INTROMET 2025, Pune"
+      "short": "INTROMET 2025, Pune",
+      "end": "2025-11-20"
     },
     {
       "id": "iddrr-rsd-2025",
@@ -547,7 +549,8 @@
           "caption": "Certificate of attendance from the summer school"
         }
       ],
-      "short": "HPC4Climate, Germany"
+      "short": "HPC4Climate, Germany",
+      "end": "2025-08-07"
     },
     {
       "id": "jrf-srf-2025",
@@ -634,7 +637,8 @@
           "caption": "Trying the ISRO astronaut photo stand between sessions"
         }
       ],
-      "short": "NRSC training, Jan 2025"
+      "short": "NRSC training, Jan 2025",
+      "end": "2025-01-24"
     },
     {
       "id": "iith-friends-iitd",
@@ -743,7 +747,8 @@
           "caption": "With fellow participants outside ICTS during the data assimilation school"
         }
       ],
-      "short": "ICTS, May 2024"
+      "short": "ICTS, May 2024",
+      "end": "2024-05-17"
     },
     {
       "id": "idrim-2023",
@@ -808,7 +813,8 @@
           "caption": "Group photo of the IDRiM 2023 participants, 28 to 30 September 2023"
         }
       ],
-      "short": "IDRiM 2023, Roorkee"
+      "short": "IDRiM 2023, Roorkee",
+      "end": "2023-09-30"
     },
     {
       "id": "iith-convocation-2022",
@@ -911,7 +917,8 @@
           "caption": "Evening with Prof. S. Kumaresan and fellow participants"
         }
       ],
-      "short": "MTTS 2019"
+      "short": "MTTS 2019",
+      "end": "2019-06-15"
     },
     {
       "id": "mtts-2018",
@@ -976,7 +983,8 @@
           "caption": "With a friend from the programme on the IIT Guwahati campus"
         }
       ],
-      "short": "MTTS 2018"
+      "short": "MTTS 2018",
+      "end": "2018-06-23"
     }
   ]
 }

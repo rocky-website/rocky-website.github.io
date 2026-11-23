@@ -36,7 +36,7 @@ python3 tools/add_photos.py egu-2026 photo1.jpg photo2.jpg \
     --place "Vienna, Austria" --category conference
 ```
 
-Categories: `field`, `conference`, `school`, `campus`, `travel`. Photos are resized to 2000 px with 700 px thumbnails, and camera metadata (including GPS) is dropped. Write captions in `gallery/gallery.json`. Run the same command with an existing album id to add more photos to it. No rebuild is needed for photos.
+Categories: `field`, `conference`, `school`, `campus`, `travel`. Photos are resized to 2000 px with 700 px thumbnails, and camera metadata (including GPS) is dropped. Write captions in `gallery/gallery.json`. For an event over several days, add `"end": "YYYY-MM-DD"` to the album and the gallery shows the range, for example 19 to 21 November 2026. Run the same command with an existing album id to add more photos to it. No rebuild is needed for photos.
 
 ## Hosting and address
 
